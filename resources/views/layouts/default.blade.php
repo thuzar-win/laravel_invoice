@@ -16,6 +16,8 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.css" rel="stylesheet">
 
     <script src="<?= URL::asset('assets/js/app.js') ?>"></script>
+    <script src="<?= URL::asset('js/button.js') ?>"></script>
+
 </head>
 
 <body>

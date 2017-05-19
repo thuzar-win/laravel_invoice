@@ -98,8 +98,6 @@
 
     </table>
 
-
     {!! $items->render() !!}
-
 
 @endsection

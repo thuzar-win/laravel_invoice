@@ -3,7 +3,7 @@
 
  {!! Form::model($item, ['method' => 'PATCH','route' => ['itemCRUD.update', $item->id]]) !!}
     <input type="hidden" name="_token" value="<?= csrf_token(); ?>" >
-    <h1 class="text-primary">New Invoice</h1>
+    <h1 class="text-primary">Update Invoice</h1>
     <div class="row">
         <div class="col-sm-2">
             <div class="form-group">
@@ -15,7 +15,7 @@
 
     <hr>
 
-    <table class="table table-bordered table-form" id="app">
+    <table class="table table-bordered table-form">
         <thead>
             <tr>
                 <th>Item Name</th>
@@ -26,7 +26,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr v-for="product in form.products">
+            <tr>
                 <td>
                   {!! Form::text('item_name', null, array('class' => 'form-control')) !!}
                 </td>
@@ -40,31 +40,33 @@
                     <span class="table-text"></span>
                 </td>
                 <td class="table-remove">
-                    <span @click="remove(product)" class="table-remove-btn">&times;</span>
+                    <span class="table-remove-btn">&times;</span>
                 </td>
             </tr>
         </tbody>
         <tfoot>
             <tr>
-                <td class="table-empty" colspan=3><a href="#" @click="addLine()">Add Line</a></td>
-                <td class="table-label">Sub Total</td>
-                <td class="table-amount"></td>
+                <td colspan=3><a href="#" @click="addLine()">Add Line</a></td>
+                <td>Sub Total</td>
+                <td></td>
             </tr>
             <tr>
-                <td class="table-empty" colspan=3></td>
-                <td class="table-label">Tax</td>
+                <td colspan=3></td>
+                <td>Tax</td>
                 <td>
                   {!! Form::text('tax', null, array('class' => 'form-control')) !!} %
                 </td>
             </tr>
             <tr>
-                <td class="table-empty" colspan=3></td>
-                <td class="table-label">Grand Total</td>
-                <td class="table-amount"></td>
+                <td colspan=3></td>
+                <td>Grand Total</td>
+                <td></td>
             </tr>
         </tfoot>
     </table>
 
-    <input type="submit"  value="Create" class="btn btn-primary">
+    <a href="{{route('itemCRUD.index')}}" class="btn btn-primary">Cancle</a>
+
+    <input type="submit"  value="Update" class="btn btn-primary">
 {!! Form::close() !!}
 @stop
